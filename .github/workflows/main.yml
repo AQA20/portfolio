@@ -1,0 +1,62 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  install_dependencies:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cache npm dependencies
+        id: cache_node_modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-portfolio-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-portfolio-
+
+      - name: Install npm dependencies
+        run: npm ci install
+
+
+    
+      - name: Run lint
+        run: npm run lint
+
+      - name: Build the application
+        run: npm run build
+
+  build:
+    runs-on: self-hosted
+    needs: install_dependencies
+
+    steps:
+      - name: Run Linting
+        run: |
+          npm run lint
+
+      - name: Build the application
+        run: npm run build
+
+  deploy:
+    runs-on: self-hosted
+    needs: build
+
+    steps:
+      - name: Replace the old dist folder with the new one
+        run: |
+          sudo rm -rf /var/www/portfolio/dist
+          sudo mv dist /var/www/portfolio/dist
+
+      - name: Restart Nginx Service
+        run: |
+          sudo systemctl reload nginx
+          sudo systemctl restart nginx
