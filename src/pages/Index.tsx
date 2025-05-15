@@ -22,6 +22,14 @@ const Index = () => {
 
   const experiences = [
     {
+      company: 'Tripsome',
+      role: 'Full Stack Engineer',
+      period: 'Present',
+      description: 'Currently working at Tripsome as a Full Stack Engineer, specializing in Laravel, PHP, MySQL, Vue.js, Vuetify, and Tailwind CSS.',
+      logo: '/hadigro_logo.jpeg',
+      url: 'https://tripsome.com/',
+    },
+    {
       company: 'Metapic',
       role: 'Full Stack Engineer',
       period: 'Mar 2023 - Jun 2024 · 1 yr 4 mos',
@@ -212,6 +220,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
+                className={exp.period === 'Present' ? 'md:col-span-2' : ''}
               >
                 <Card className="overflow-hidden bg-background/20 backdrop-blur hover:bg-primary/5 transition-all duration-300">
                   <div className="p-6">
