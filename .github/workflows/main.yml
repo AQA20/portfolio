@@ -26,8 +26,6 @@ jobs:
       - name: Install npm dependencies
         run: npm ci install
 
-
-    
       - name: Run lint
         run: npm run lint
 
@@ -46,11 +44,22 @@ jobs:
       - name: Build the application
         run: npm run build
 
+      - name: Upload dist folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-folder
+          path: dist
+
   deploy:
     runs-on: self-hosted
     needs: build
 
     steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-folder
+          path: dist
       - name: Replace the old dist folder with the new one
         run: |
           sudo rm -rf /var/www/portfolio/dist
