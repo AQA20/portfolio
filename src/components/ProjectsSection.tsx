@@ -3,47 +3,10 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Github, ExternalLink } from 'lucide-react'
 import { Project } from '@/interfaces/Project'
+import { Projects } from '@/lib/Projects'
 import ProjectGallery from '@/components/ProjectGallery'
+import VideoPlayer from '@/components/VideoPlayer'
 
-const projects: Project[] = [
-  {
-    title: 'Booking flow',
-    description: 'A new booking flow for a travel booking platform',
-    tech: ['PHP', 'MySQL', 'Laravel', 'Vue', 'Tailwind', 'Vuetify'],
-    image: '/500kalima.png',
-    liveUrl: 'https://tripsome.az/en/activities',
-    images: [
-      '/tripsome/0.png',
-      '/tripsome/1.png',
-      '/tripsome/2.png',
-      '/tripsome/3.png',
-    ],
-  },
-  {
-    title: 'Blog',
-    description: 'A blog website',
-    tech: ['Next.js', 'React', 'JavaScript', 'Tailwind'],
-    image: '/500kalima.png',
-    githubUrl: 'https://github.com/AQA20/500kalima',
-    liveUrl: 'https://500kalima.com',
-  },
-  {
-    title: 'Blog CMS',
-    description: 'A blog content management system',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Shadcn'],
-    image: '/500kalima-cms.png',
-    githubUrl: 'https://github.com/AQA20/blog-cms',
-    liveUrl: 'https://manage.500kalima.com',
-  },
-  {
-    title: 'Blog API',
-    description: 'Node.js and Express.js RESTful API for a blog',
-    tech: ['Node.js', 'Express.js', 'AWS', 'MySql', 'Sequelize'],
-    image: '/node-api.png',
-    githubUrl: 'https://github.com/AQA20/blog-api',
-    liveUrl: '#',
-  },
-]
 
 const ProjectLinks = ({
   githubUrl,
@@ -79,6 +42,24 @@ const ProjectLinks = ({
   )
 }
 
+const ProjectPreview = (project: Project) => {
+  switch (project.type) {
+    case 'image':
+      return (
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-auto sm:h-[550px] object-cover"
+        />
+      )
+    case 'images':
+      return <ProjectGallery images={project.images} />
+
+    default:
+      return <VideoPlayer src={project.video} />
+  }
+}
+
 const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 px-4 bg-background/50">
@@ -87,7 +68,7 @@ const ProjectsSection = () => {
           Latest Projects
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {Projects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -95,16 +76,7 @@ const ProjectsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <Card className="overflow-hidden bg-background/20 backdrop-blur">
-                {project.images ? (
-                  <ProjectGallery images={project.images} />
-                ) : (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-auto sm:h-[550px] object-cover"
-                  />
-                )}
-
+                { ProjectPreview(project) }
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="mb-4">{project.description}</p>
