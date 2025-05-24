@@ -27,7 +27,7 @@ const ProjectGallery = ({ images }: ProjectGalleryProps) => {
       {images.map((image, index) => {
         const isFeatured = index === 0
         const isHidden = index > 3
-        const showMoreBadge = index === 3 && images.length > 3
+        const showMoreBadge = index === 3 && images.length > 4
 
         return (
           <a

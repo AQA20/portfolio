@@ -2,6 +2,20 @@ import { Project } from '@/interfaces/Project'
 
 export const Projects: Project[] = [
   {
+    title: 'User Booking Page',
+    description: 'A new booking use page',
+    tech: ['PHP', 'MySQL', 'Laravel', 'Vue', 'Tailwind', 'Vuetify'],
+    video: '/filtered&paginated-tickets.webm',
+    liveUrl: '#',
+    images: [
+      '/tripsome/userBookingPage0.png',
+      '/tripsome/userBookingPage1.png',
+      '/tripsome/userBookingPage2.png',
+      '/tripsome/userBookingPage3.png',
+    ],
+    type: 'images',
+  },
+  {
     title: 'Paginated & Filterable Booking Tickets',
     description: 'A new booking flow for a travel booking platform',
     tech: ['PHP', 'MySQL', 'Laravel', 'Vue', 'Tailwind', 'Vuetify'],
