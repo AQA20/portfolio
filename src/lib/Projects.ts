@@ -2,6 +2,24 @@ import { Project } from '@/interfaces/Project'
 
 export const Projects: Project[] = [
   {
+    title: 'Select Skips Page Stepper',
+    description: 'A stepper page to select a skip',
+    tech: ['React', 'Vite', 'Vercel',],
+    liveUrl: 'https://rem-waste-skips.vercel.app/',
+    githubUrl: 'https://github.com/AQA20/rem-waste-skips',
+    image: '/RemWaste/selectSkipsStepper.png',
+    type: 'image',
+  },
+  {
+    title: 'Select Skips Page',
+    description: 'A page to select a skip',
+    tech: ['React', 'Vite', 'Vercel',],
+    liveUrl: 'https://rem-waste-inky.vercel.app/',
+    githubUrl: 'https://github.com/AQA20/rem-waste',
+    image: '/RemWaste/selectSkips.png',
+    type: 'image',
+  },
+  {
     title: 'User Booking Page',
     description: 'A new booking use page',
     tech: ['PHP', 'MySQL', 'Laravel', 'Vue', 'Tailwind', 'Vuetify'],
