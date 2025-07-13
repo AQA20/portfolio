@@ -2,6 +2,14 @@ import { Project } from '@/interfaces/Project'
 
 export const Projects: Project[] = [
   {
+    title: 'Bookmarks RESTful API',
+    description: 'A RESTful API for managing bookmarks, built with NestJS.',
+    tech: ['NestJs', 'TypeScript', 'Prisma', 'PostgreSQL', 'JWT', 'Pactum', 'Jest'],
+    githubUrl: 'https://github.com/AQA20/bookmarks-api',
+    image: '/bookmarks.png',
+    type: 'image',
+  },
+  {
     title: 'Select Skips Page Stepper',
     description: 'A stepper page to select a skip',
     tech: ['React', 'Vite', 'Vercel',],
