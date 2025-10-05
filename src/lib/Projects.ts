@@ -2,6 +2,21 @@ import { Project } from '@/interfaces/Project'
 
 export const Projects: Project[] = [
   {
+    title: 'News website',
+    description: 'A news aggregator website',
+    tech: [
+      'NextJs',
+      'JavaScript',
+      'Tailwind',
+      'PostgreSQL',
+      'PHP',
+      'Laravel',
+    ],
+    liveUrl: 'https://hyksar.com/',
+    image: '/hyksar.png',
+    type: 'image',
+  },
+  {
     title: 'Bookmarks RESTful API',
     description: 'A RESTful API for managing bookmarks, built with NestJS.',
     tech: [
