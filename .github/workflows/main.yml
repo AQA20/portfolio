@@ -24,7 +24,7 @@ jobs:
             ${{ runner.os }}-portfolio-
 
       - name: Install npm dependencies
-        run: npm ci install
+        run: npm ci install --force
 
       - name: Run lint
         run: npm run lint
