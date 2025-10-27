@@ -3,15 +3,17 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   server: {
-    host: true, // allows access from network (replaces "::" which is IPv6-specific)
+    host: "::",
     port: 8080,
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+  ].filter(Boolean),
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+}));
