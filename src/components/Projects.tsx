@@ -17,10 +17,25 @@ import 'yet-another-react-lightbox/styles.css'
 import 'yet-another-react-lightbox/plugins/captions.css'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
 
-// (Zoom has no extra CSS file in recent versions)
+// ──────────────────────────────────────────────────────────────
+// Types
+// ──────────────────────────────────────────────────────────────
+type MediaType = 'image' | 'images' | 'video'
+
+export interface Project {
+  title: string
+  description?: string
+  type?: MediaType
+  image?: string
+  images?: string[]
+  video?: string
+  tech?: string[]
+  liveUrl?: string
+  githubUrl?: string
+}
 
 type MediaProps = {
-  type?: 'image' | 'images' | 'video'
+  type?: MediaType
   image?: string
   images?: string[]
   video?: string
@@ -29,9 +44,11 @@ type MediaProps = {
   liveUrl?: string
 }
 
+// ──────────────────────────────────────────────────────────────
+// ProjectMedia
+// ──────────────────────────────────────────────────────────────
 function ProjectMedia({ type, image, images, video, alt, groupId }: MediaProps) {
   const mediaBase = 'relative w-full overflow-hidden rounded-xl bg-muted h-56 md:h-64'
-
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [photoIndex, setPhotoIndex] = useState(0)
 
@@ -71,7 +88,7 @@ function ProjectMedia({ type, image, images, video, alt, groupId }: MediaProps) 
         {/* Swiper navigation buttons (external elements) */}
         <button
           aria-label="Previous image"
-          className={`absolute left-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/40 p-2 text-white hover:bg-black/60`}
+          className="absolute left-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/40 p-2 text-white hover:bg-black/60"
           id={`${groupId}-prev`}
           type="button"
         >
@@ -79,7 +96,7 @@ function ProjectMedia({ type, image, images, video, alt, groupId }: MediaProps) 
         </button>
         <button
           aria-label="Next image"
-          className={`absolute right-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/40 p-2 text-white hover:bg-black/60`}
+          className="absolute right-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/40 p-2 text-white hover:bg-black/60"
           id={`${groupId}-next`}
           type="button"
         >
@@ -115,7 +132,7 @@ function ProjectMedia({ type, image, images, video, alt, groupId }: MediaProps) 
           className="absolute bottom-2 left-0 right-0 z-20 flex justify-center"
         />
 
-        {/* Lightbox with navigation visible (since multiple images) */}
+        {/* Lightbox */}
         <Lightbox
           open={lightboxOpen}
           close={() => setLightboxOpen(false)}
@@ -125,13 +142,12 @@ function ProjectMedia({ type, image, images, video, alt, groupId }: MediaProps) 
           carousel={{ finite: false }}
           controller={{ closeOnBackdropClick: true }}
           animation={{ fade: 300 }}
-          // use default prev/next buttons
         />
       </div>
     )
   }
 
-  // --- Single Image (or fallback to first of images) ---
+  // --- Single Image ---
   const single = image || imgs[0] || ''
   const slides = single ? [{ src: single, alt }] : []
 
@@ -154,7 +170,6 @@ function ProjectMedia({ type, image, images, video, alt, groupId }: MediaProps) 
         </div>
       )}
 
-      {/* Lightbox for single image with navigation hidden */}
       <Lightbox
         open={lightboxOpen}
         close={() => setLightboxOpen(false)}
@@ -172,8 +187,10 @@ function ProjectMedia({ type, image, images, video, alt, groupId }: MediaProps) 
   )
 }
 
+// ──────────────────────────────────────────────────────────────
+// ProjectsSection
+// ──────────────────────────────────────────────────────────────
 export default function ProjectsSection() {
-  // unique classes for the outer carousel controls
   const uid = useId().replace(/:/g, '')
   const navPrevClass = `projects-prev-${uid}`
   const navNextClass = `projects-next-${uid}`
@@ -225,7 +242,7 @@ export default function ProjectsSection() {
           }}
           style={{ paddingBottom: '0.5rem' }}
         >
-          {projectsData.map((project, idx) => {
+          {projectsData.map((project: Project, idx: number) => {
             const groupId = `proj-${idx}`
             return (
               <SwiperSlide key={idx} style={{ height: 'auto' }}>
@@ -270,10 +287,10 @@ export default function ProjectsSection() {
 
                   <CardContent className="flex h-full flex-col gap-5">
                     <ProjectMedia
-                      type={project.type as MediaProps['type']}
-                      image={(project as any).image}
-                      images={(project as any).images}
-                      video={(project as any).video}
+                      type={project.type}
+                      image={project.image}
+                      images={project.images}
+                      video={project.video}
                       alt={project.title}
                       groupId={groupId}
                       liveUrl={project.liveUrl}
@@ -281,7 +298,7 @@ export default function ProjectsSection() {
 
                     {project.tech?.length ? (
                       <div className="flex flex-wrap gap-2">
-                        {project.tech.slice(0, 8).map((t: string, i: number) => (
+                        {project.tech.slice(0, 8).map((t, i) => (
                           <Badge
                             key={i}
                             variant="secondary"
