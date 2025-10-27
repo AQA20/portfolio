@@ -182,7 +182,7 @@ export default function ProjectsSection() {
     <section id="projects" className="py-24 bg-gradient-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+          <div className="md:flex items-center gap-3">
             <Badge variant="outline" className="text-primary border-primary/30">
               Featured Work
             </Badge>
