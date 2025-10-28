@@ -70,7 +70,7 @@ function CompanyAvatar({ src, alt }: { src?: string; alt: string }) {
       src={src}
       alt={alt}
       className="h-12 w-12 rounded-full object-cover ring-1 ring-border/50"
-      loading="lazy"
+      decoding="async"
     />
   )
 }
@@ -111,9 +111,9 @@ export default function Experience() {
                 className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded-xl"
               >
                 <div className="bg-card/40 backdrop-blur border border-border/50 rounded-xl p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/30">
-                  <div className="flex items-start justify-between gap-4 mb-3">
+                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-3">
                     {/* Left: avatar + name/role */}
-                    <div className="flex items-start gap-3 min-w-0">
+                    <div className="flex items-start gap-3 min-w-0 flex-1">
                       <CompanyAvatar src={exp.image} alt={exp.company} />
                       <div className="min-w-0">
                         <div className="flex items-center gap-2">
@@ -129,7 +129,7 @@ export default function Experience() {
                     </div>
 
                     {/* Right: period */}
-                    <span className="flex shrink-0 items-center text-sm text-muted-foreground">
+                    <span className="flex shrink-0 items-center text-sm text-muted-foreground mt-2 md:mt-0">
                       <Calendar className="w-4 h-4 mr-1" /> {exp.period}
                     </span>
                   </div>

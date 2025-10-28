@@ -39,7 +39,8 @@ export default function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       setElevated(window.scrollY > 4)
-      const winScroll = document.documentElement.scrollTop || document.body.scrollTop
+      const winScroll =
+        document.documentElement.scrollTop || document.body.scrollTop
       const height =
         (document.documentElement.scrollHeight || document.body.scrollHeight) -
         document.documentElement.clientHeight
@@ -85,9 +86,12 @@ export default function Navigation() {
   )
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 border-b ${
-      elevated ? 'bg-background/80 backdrop-blur-xl border-border/80 shadow-[0_8px_30px_rgba(0,0,0,0.05)]' : 'bg-transparent border-transparent'
-    }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 border-b ${
+        elevated
+          ? 'bg-background/80 backdrop-blur-xl border-border/80 shadow-[0_8px_30px_rgba(0,0,0,0.05)]'
+          : 'md:bg-transparent md:border-transparent bg-background/80 border-border/80 backdrop-blur-xl'
+      }`}
     >
       {/* Top scroll progress bar */}
       <motion.div
@@ -108,7 +112,9 @@ export default function Navigation() {
                   <button
                     onClick={() => scrollToSection(id)}
                     className={`relative px-2 py-1 text-sm transition-colors ${
-                      active === id ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
+                      active === id
+                        ? 'text-foreground'
+                        : 'text-muted-foreground hover:text-foreground'
                     }`}
                     aria-current={active === id ? 'page' : undefined}
                   >
@@ -120,9 +126,13 @@ export default function Navigation() {
                           <motion.span
                             layoutId="active-underline"
                             className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-primary"
-                            transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                          />)
-                        }
+                            transition={{
+                              type: 'spring',
+                              stiffness: 500,
+                              damping: 30,
+                            }}
+                          />
+                        )}
                       </AnimatePresence>
                     </span>
                   </button>
@@ -141,7 +151,11 @@ export default function Navigation() {
               aria-controls="mobile-nav"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
