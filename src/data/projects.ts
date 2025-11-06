@@ -25,7 +25,7 @@ export const Projects: Project[] = [
       'Vite',
       'Shadcn',
     ],
-    liveUrl: 'https://predictabnb.org/',
+    liveUrl: 'https://predictabnb.netlify.app/',
     image: '/predictabnb.png',
     type: 'image',
   },
