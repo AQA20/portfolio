@@ -6,21 +6,21 @@ import { Calendar, ExternalLink } from 'lucide-react'
 const experiences = [
   {
     company: 'Tripsome',
-    role: 'Full Stack Engineer',
+    role: 'Frontend Engineer',
     period: 'Present',
     description:
       'Currently working at Tripsome as a Full Stack Engineer, specializing in Laravel, PHP, MySQL, Vue.js, Vuetify, and Tailwind CSS.',
-    tech: ['Laravel', 'PHP', 'MySQL', 'Vue.js', 'Vuetify', 'Tailwind CSS'],
+    tech: ['React', 'Next', 'Zuztand', 'Shadcn', 'Vue.js', 'Vuetify', 'Tailwind CSS'],
     image: '/hadigro_logo.jpeg',
     url: 'https://tripsome.az/en',
   },
   {
     company: 'Metapic',
-    role: 'Full Stack Engineer',
+    role: 'Frontend Engineer',
     period: 'Mar 2023 - Jun 2024 · 1 yr 4 mos',
     description:
       'Integrated Google Analytics, Awin, Mailchimp, CJ, and Stripe. Enhanced the admin dashboard with new features, UX improvements, and performance optimizations.',
-    tech: ['Laravel', 'Stripe', 'Mailchimp', 'Vue.js', 'Analytics'],
+    tech: ['React', 'Next', 'Zuztand', 'Shadcn', 'Vue.js', 'Vuetify'],
     image: '/metapic_logo.jpeg',
     url: 'https://metapic.com/',
   },
@@ -30,27 +30,27 @@ const experiences = [
     period: 'Feb 2022 - Mar 2023 · 1 yr 2 mos',
     description:
       'Developed and maintained responsive UIs using React and Vue.js, implementing features, API integrations, and performance tuning.',
-    tech: ['React', 'Vue.js', 'Tailwind CSS'],
+    tech: ['React', 'Redux', 'Vue.js', 'Tailwind CSS'],
     image: '/logistaas_logo.jpeg',
     url: 'https://logistaas.com/',
   },
   {
     company: 'Tripsome',
-    role: 'Full Stack Engineer',
+    role: 'Frontend Engineer',
     period: 'Oct 2020 - Nov 2021 · 1 yr 2 mos',
     description:
       'Built and refactored multiple applications. Developed an analytics dashboard to track sales, profits, and user permissions.',
-    tech: ['Laravel', 'MySQL', 'Vue.js'],
+    tech: ['React', 'Next', 'Zuztand', 'Redux', 'Vue.js', 'vuex'],
     image: '/hadigro_logo.jpeg',
     url: 'https://tripsome.az/en',
   },
   {
     company: 'VAV Technology',
-    role: 'Full Stack Engineer',
+    role: 'Frontend Engineer',
     period: 'May 2019 - Dec 2020 · 1 yr 8 mos',
     description:
       'Created static websites and CMS solutions using JavaScript, React, TypeScript, and Node.js. Automated workflows with custom scripts.',
-    tech: ['React', 'TypeScript', 'Node.js', 'JavaScript'],
+    tech: ['React', 'Next', 'Zuztand', 'Redux', 'Vue.js', 'vuex', 'Nuxt'],
     image: '/vav_company_logo.jpeg',
     url: 'https://www.vav.com.mk/',
   },
