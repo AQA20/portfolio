@@ -34,12 +34,13 @@ const About = () => {
             About Me
           </Badge>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Crafting Digital Experiences
+            Building End-to-End Products
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a passionate front-end developer with a keen eye for design and a love for 
-            clean, efficient code. I specialize in building modern web applications that 
-            combine beautiful user interfaces with robust backend systems.
+            I'm a full stack developer with a strong product mindset, a keen eye for design,
+            and a focus on clean, efficient code. I build modern web applications from the
+            interface layer to the API and database, balancing user experience, performance,
+            and maintainability.
           </p>
         </div>
 

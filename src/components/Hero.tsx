@@ -34,16 +34,16 @@ const Hero = () => {
           <div className="text-center lg:text-left animate-fade-in">
             <div className="mb-8">
               <h1 className="text-5xl lg:text-7xl font-bold mb-6">
-                <span className="text-foreground">Front-end</span>
+                <span className="text-foreground">Full Stack</span>
                 <br />
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Developer
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-lg">
-                Front-end developer passionate about creating beautiful,
-                functional web applications that solve real-world problems and
-                deliver exceptional user experiences.
+                Full stack developer building fast, scalable web applications
+                with polished user interfaces, reliable backend systems, and
+                practical solutions to real-world problems.
               </p>
             </div>
 

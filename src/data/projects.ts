@@ -5,6 +5,9 @@ export const Projects: Project[] = [
     title: 'VTTracker',
     description: 'A Next.js frontend for tracking vehicle/unit delivery and engineering submissions',
     tech: [
+      'PHP',
+      'Laravel',
+      'PostgreSQL',
       'React',
       'Nextjs',
       'TypeScript',
@@ -62,6 +65,9 @@ export const Projects: Project[] = [
     title: 'News website',
     description: 'A news aggregator website',
     tech: [
+      'PHP',
+      'Laravel',
+      'PostgreSQL',
       'NextJs',
       'JavaScript',
       'Tailwind',
@@ -128,7 +134,7 @@ export const Projects: Project[] = [
   {
     title: 'Blog',
     description: 'A blog website',
-    tech: ['Next.js', 'React', 'JavaScript', 'Tailwind'],
+    tech: ['Node.js', 'Express.js', 'PostgreSQL', 'Next.js', 'React', 'JavaScript', 'Tailwind'],
     image: '/500kalima.png',
     githubUrl: 'https://github.com/AQA20/500kalima',
     // liveUrl: 'https://500kalima.site',

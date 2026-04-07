@@ -1,90 +1,123 @@
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { FaAws } from "react-icons/fa";
+import {
+  siCss,
+  siDocker,
+  siExpress,
+  siGit,
+  siGithub,
+  siHtml5,
+  siJira,
+  siJavascript,
+  siLaravel,
+  siMysql,
+  siNextdotjs,
+  siNodedotjs,
+  siOpenapiinitiative,
+  siPhp,
+  siPostgresql,
+  siReact,
+  siReactquery,
+  siRedux,
+  siShadcnui,
+  siTailwindcss,
+  siTanstack,
+  siTypescript,
+  siVuedotjs,
+  siVuetify,
+} from "simple-icons";
+import type { IconType } from "react-icons";
+
+type BrandIcon = {
+  hex: string;
+  path: string;
+  title: string;
+};
+
+type Technology = {
+  icon?: BrandIcon;
+  reactIcon?: IconType;
+  reactIconClassName?: string;
+  name: string;
+};
+
+const technologies: Technology[] = [
+  { name: "React", icon: siReact },
+  { name: "Next.js", icon: siNextdotjs },
+  { name: "TypeScript", icon: siTypescript },
+  { name: "Vue", icon: siVuedotjs },
+  { name: "Vuetify", icon: siVuetify },
+  { name: "JavaScript", icon: siJavascript },
+  { name: "Node.js", icon: siNodedotjs },
+  { name: "Express.js", icon: siExpress },
+  { name: "Tailwind CSS", icon: siTailwindcss },
+  { name: "shadcn/ui", icon: siShadcnui },
+  { name: "CSS/SCSS", icon: siCss },
+  { name: "AWS", reactIcon: FaAws, reactIconClassName: "text-[#FF9900]" },
+  { name: "Docker", icon: siDocker },
+  { name: "Zustand", icon: siReactquery },
+  { name: "Redux", icon: siRedux },
+  { name: "TanStack Query", icon: siTanstack },
+  { name: "PostgreSQL", icon: siPostgresql },
+  { name: "MySQL", icon: siMysql },
+  { name: "Git", icon: siGit },
+  { name: "GitHub", icon: siGithub },
+  { name: "PHP", icon: siPhp },
+  { name: "Laravel", icon: siLaravel },
+  { name: "Jira", icon: siJira },
+  { name: "OpenAPI", icon: siOpenapiinitiative },
+  { name: "HTML", icon: siHtml5 },
+];
+
+const SkillPill = ({ icon, name, reactIcon: ReactIcon, reactIconClassName }: Technology) => {
+  return (
+    <div className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-slate-900 shadow-[0_2px_10px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(15,23,42,0.12)]">
+      <span className="flex h-6 w-6 items-center justify-center" aria-hidden="true">
+        {ReactIcon ? (
+          <ReactIcon className={reactIconClassName ?? "text-slate-900"} size={20} />
+        ) : icon ? (
+          <svg
+            viewBox="0 0 24 24"
+            className="h-5 w-5"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d={icon.path} fill={`#${icon.hex}`} />
+          </svg>
+        ) : null}
+      </span>
+      <span className="text-sm font-semibold tracking-tight text-slate-900">
+        {name}
+      </span>
+    </div>
+  );
+};
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Frontend Development",
-      skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 92 },
-        { name: "Vue.js", level: 80 }
-      ]
-    }
-  ];
-
-  const technologies = [
-    "React", "Next.js", "TypeScript", "Vue.js", "Tailwind CSS",
-    "Zustand", "Redux", "veux"
-  ];
-
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 bg-gradient-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <Badge variant="outline" className="mb-4 text-primary border-primary/30">
-            Skills & Expertise
+        <div className="text-center mb-12 animate-fade-in">
+          <Badge variant="outline" className="mb-4 border-primary/30 text-primary">
+            Skills & Technologies
           </Badge>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Frontend Proficiency
+          <h2 className="text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
+            Skills & Technologies
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Expertise in building modern, responsive, and performant web applications 
-            using cutting-edge frontend frameworks and technologies.
-          </p>
+          <div className="mx-auto mt-6 h-px w-16 bg-border/80" />
         </div>
 
-        <div className="grid lg:grid-cols-1 gap-8 mb-16">
-          {skillCategories.map((category, index) => (
-            <Card 
-              key={index} 
-              className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-elegant transition-all duration-300 animate-slide-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+          {technologies.map((technology, index) => (
+            <div
+              key={technology.name}
+              className="animate-slide-in"
+              style={{ animationDelay: `${index * 0.04}s` }}
             >
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-6 text-center bg-gradient-primary bg-clip-text text-transparent">
-                  {category.title}
-                </h3>
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <Progress 
-                        value={skill.level} 
-                        className="h-2 bg-muted"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+              <SkillPill {...technology} />
+            </div>
           ))}
         </div>
-
-        <Card className="bg-gradient-accent border-border/50 animate-fade-in">
-          <CardContent className="p-8">
-            <h3 className="text-2xl font-bold mb-6 text-center">
-              Frontend Technologies I Work With
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {technologies.map((tech, index) => (
-                <Badge 
-                  key={index}
-                  variant="secondary" 
-                  className="px-4 py-2 text-sm hover:bg-primary hover:text-primary-foreground transition-colors duration-300 cursor-pointer"
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );
