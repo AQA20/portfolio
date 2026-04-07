@@ -7,16 +7,16 @@ const experiences = [
   {
     company: 'Tripsome',
     role: 'Frontend Engineer',
-    period: 'Present',
+    period: 'April 2025 - April 2026 · 1 yr 1 mo',
     description:
-      'Currently working at Tripsome as a Full Stack Engineer, specializing in Laravel, PHP, MySQL, Vue.js, Vuetify, and Tailwind CSS.',
+      'As a Frontend Engineer at Tripsome, I built features from scratch and translated Figma UI components into production-ready web components, following best practices.',
     tech: ['React', 'Next', 'Zuztand', 'Shadcn', 'Vue.js', 'Vuetify', 'Tailwind CSS'],
     image: '/hadigro_logo.jpeg',
     url: 'https://tripsome.az/en',
   },
   {
     company: 'Metapic',
-    role: 'Frontend Engineer',
+    role: 'Full Stack Engineer',
     period: 'Mar 2023 - Jun 2024 · 1 yr 4 mos',
     description:
       'Integrated Google Analytics, Awin, Mailchimp, CJ, and Stripe. Enhanced the admin dashboard with new features, UX improvements, and performance optimizations.',
@@ -36,7 +36,7 @@ const experiences = [
   },
   {
     company: 'Tripsome',
-    role: 'Frontend Engineer',
+    role: 'Full Stack Engineer',
     period: 'Oct 2020 - Nov 2021 · 1 yr 2 mos',
     description:
       'Built and refactored multiple applications. Developed an analytics dashboard to track sales, profits, and user permissions.',
@@ -46,7 +46,7 @@ const experiences = [
   },
   {
     company: 'VAV Technology',
-    role: 'Frontend Engineer',
+    role: 'Full Stack Engineer',
     period: 'May 2019 - Dec 2020 · 1 yr 8 mos',
     description:
       'Created static websites and CMS solutions using JavaScript, React, TypeScript, and Node.js. Automated workflows with custom scripts.',

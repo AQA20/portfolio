@@ -37,7 +37,8 @@ export const Projects: Project[] = [
       'JavaScript',
       'Tailwind',
     ],
-    liveUrl: 'https://hyksar.com/',
+    // liveUrl: 'https://hyksar.com/',
+    githubUrl: 'https://github.com/AQA20/hyksar',
     image: '/hyksar.png',
     type: 'image',
   },
@@ -101,7 +102,7 @@ export const Projects: Project[] = [
     tech: ['Next.js', 'React', 'JavaScript', 'Tailwind'],
     image: '/500kalima.png',
     githubUrl: 'https://github.com/AQA20/500kalima',
-    liveUrl: 'https://500kalima.site',
+    // liveUrl: 'https://500kalima.site',
     type: 'image',
   },
   {
@@ -110,7 +111,7 @@ export const Projects: Project[] = [
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Shadcn'],
     image: '/500kalima-cms.png',
     githubUrl: 'https://github.com/AQA20/blog-cms',
-    liveUrl: 'https://manage.500kalima.site',
+    // liveUrl: 'https://manage.500kalima.site',
     type: 'image',
   },
 ]
