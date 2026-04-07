@@ -2,6 +2,35 @@ import { Project } from '@/interfaces/Project'
 
 export const Projects: Project[] = [
   {
+    title: 'VTTracker',
+    description: 'A Next.js frontend for tracking vehicle/unit delivery and engineering submissions',
+    tech: [
+      'React',
+      'Nextjs',
+      'TypeScript',
+      'Tailwind',
+      'Vite',
+      'Shadcn',
+    ],
+    githubUrl: 'https://github.com/AQA20/vt-tracker',
+    images: [
+      '/vttracker/7.png',
+      '/vttracker/1.png',
+      '/vttracker/2.png',
+      '/vttracker/3.png',
+      '/vttracker/4.png',
+      '/vttracker/5.png',
+      '/vttracker/6.png',
+      '/vttracker/7.png',
+      '/vttracker/8.png',
+      '/vttracker/9.png',
+      '/vttracker/10.png',
+      '/vttracker/11.png',
+      '/vttracker/12.png',
+    ],
+    type: 'images',
+  },
+  {
     title: 'PolyBrain',
     description: 'A crypto landing page',
     tech: [
