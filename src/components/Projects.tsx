@@ -203,7 +203,7 @@ export default function ProjectsSection() {
             <Badge variant="outline" className="text-primary border-primary/30">
               Featured Work
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold">Latest Projects</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">Latest Projects (<span>{projectsData.length}</span>)</h2>
           </div>
 
           <div className="flex items-center gap-2">
