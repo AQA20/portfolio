@@ -2,6 +2,20 @@ import { Project } from '@/interfaces/Project'
 
 export const Projects: Project[] = [
   {
+    title: 'Veilnet',
+    description: 'A Next.js frontend for tracking vehicle/unit delivery and engineering submissions',
+    tech: [
+      'React',
+      'Nextjs',
+      'TypeScript',
+      'Tailwind',
+      'Shadcn',
+    ],
+    liveUrl: 'https://www.veilnet.to/',
+    image: '/vielnet.png',
+    type: 'image',
+  },
+  {
     title: 'VTTracker',
     description: 'A Next.js frontend for tracking vehicle/unit delivery and engineering submissions',
     tech: [
