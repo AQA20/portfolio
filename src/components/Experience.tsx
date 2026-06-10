@@ -10,7 +10,7 @@ const experiences = [
     period: 'April 2025 - April 2026 · 1 yr 1 mo',
     description:
       'As a Frontend Engineer at Tripsome, I built features from scratch and translated Figma UI components into production-ready web components, following best practices.',
-    tech: ['React', 'Next', 'Zuztand', 'Shadcn', 'Vue.js', 'Vuetify', 'Tailwind CSS'],
+    tech: ['React', 'Next', 'Shadcn', 'Vue.js', 'Vuetify', 'Tailwind CSS'],
     image: '/hadigro_logo.jpeg',
     url: 'https://tripsome.az/en',
   },
@@ -20,7 +20,7 @@ const experiences = [
     period: 'Mar 2023 - Jun 2024 · 1 yr 4 mos',
     description:
       'Integrated Google Analytics, Awin, Mailchimp, CJ, and Stripe. Enhanced the admin dashboard with new features, UX improvements, and performance optimizations.',
-    tech: ['PHP', 'Laravel', 'MySQL', 'Vue.js', 'Vuetify'],
+    tech: ['PHP', 'Laravel', 'MySQL', 'React','Vue.js', 'Vuetify'],
     image: '/metapic_logo.jpeg',
     url: 'https://metapic.com/',
   },
@@ -30,7 +30,7 @@ const experiences = [
     period: 'Feb 2022 - Mar 2023 · 1 yr 2 mos',
     description:
       'Developed and maintained responsive UIs using React and Vue.js, implementing features, API integrations, and performance tuning.',
-    tech: ['React', 'Redux', 'Vue.js', 'Tailwind CSS'],
+    tech: ['React', 'Tailwind CSS'],
     image: '/logistaas_logo.jpeg',
     url: 'https://logistaas.com/',
   },
@@ -40,7 +40,7 @@ const experiences = [
     period: 'Oct 2020 - Nov 2021 · 1 yr 2 mos',
     description:
       'Built and refactored multiple applications. Developed an analytics dashboard to track sales, profits, and user permissions.',
-    tech: ['PHP', 'Laravel', 'MySql', 'Redux', 'vuex', 'Vuetify'],
+    tech: ['PHP', 'Laravel', 'MySql', 'React', 'Redux', 'vue', 'vuex', 'Vuetify'],
     image: '/hadigro_logo.jpeg',
     url: 'https://tripsome.az/en',
   },
@@ -50,7 +50,7 @@ const experiences = [
     period: 'May 2019 - Dec 2020 · 1 yr 8 mos',
     description:
       'Created static websites and CMS solutions using JavaScript, React, TypeScript, and Node.js. Automated workflows with custom scripts.',
-    tech: ['PHP', 'Laravel', 'JavaScript', 'TypeScript', 'React', 'Next', 'Zustand', 'Redux', 'Vue.js', 'vuex', 'Nuxt'],
+    tech: ['PHP', 'Laravel', 'JavaScript', 'TypeScript', 'React', 'Next', 'Redux', 'Vue.js', 'vuex', 'Nuxt'],
     image: '/vav_company_logo.jpeg',
     url: 'https://www.vav.com.mk/',
   },
