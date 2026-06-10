@@ -30,7 +30,7 @@ const experiences = [
     period: 'Feb 2022 - Mar 2023 · 1 yr 2 mos',
     description:
       'Developed and maintained responsive UIs using React and Vue.js, implementing features, API integrations, and performance tuning.',
-    tech: ['React', 'Tailwind CSS'],
+    tech: ['React', 'Redux', 'vue', 'Tailwind CSS'],
     image: '/logistaas_logo.jpeg',
     url: 'https://logistaas.com/',
   },
